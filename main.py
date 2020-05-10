@@ -101,68 +101,6 @@ class Telemetr_parser(object):
             except:
                 description = ''
 
-            for table in soup_home.select('div.announcement-characteristics.clearfix'):
-                t = table.find_all('a')
-                try:
-                    area = t[0].text
-
-                except:
-                    area = ''
-
-                try:
-                    pool = t[1].text
-
-                except:
-                    pool = ''
-
-                try:
-                    type = t[2].text
-
-                except:
-                    type = ''
-
-                try:
-                    parking = t[3].text
-
-                except:
-                    parking = ''
-
-                try:
-                    condition = t[4].text
-
-                except:
-                    condition = ''
-
-                try:
-                    furnishing = t[5].text
-
-                except:
-                    furnishing = ''
-
-                try:
-                    postal_code = t[6].text
-
-                except:
-                    postal_code = ''
-
-                try:
-                    air_conditioning = t[7].text
-
-                except:
-                    air_conditioning = ''
-
-                try:
-                    no_of_bedrooms = t[8].text
-
-                except:
-                    no_of_bedrooms = ''
-
-                try:
-                    no_of_bathrooms = t[9].text
-
-                except:
-                    no_of_bathrooms = ''
-
             data_h = {'href': i,
                       'image': images_new,
                       'title': title,
@@ -171,16 +109,7 @@ class Telemetr_parser(object):
                       'phone_number': phone_number,
                       'owners_name': owners_name,
                       'description': description,
-                      'area': area,
-                      'pool': pool,
-                      'type': type,
-                      'parking': parking,
-                      'condition': condition,
-                      'furnishing': furnishing,
-                      'postal_code': postal_code,
-                      'air_conditioning': air_conditioning,
-                      'no_of_bedrooms': no_of_bedrooms,
-                      'no_of_bathrooms': no_of_bathrooms}
+                      }
             print(data_h)
             data_home.append(data_h)
 
